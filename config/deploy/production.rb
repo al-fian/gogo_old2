@@ -64,5 +64,5 @@ server '54.169.131.35', user: 'ubuntu', roles: %w{web app db}
 set :ssh_options, {
   forward_agent: true,
   auth_methods: %w[publickey],
-  keys: %w["~/.ssh/gogo-aws-ec2-ubuntu2004-server2.pem"]
+  keys: %w[home/venus/.ssh/gogo-aws-ec2-ubuntu2004-server2.pem]
 }
