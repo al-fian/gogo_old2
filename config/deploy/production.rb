@@ -60,9 +60,11 @@
 #     # password: "please use keys"
 #   }
 
-server "ec2-54-169-131-35.ap-southeast-1.compute.amazonaws.com", user: 'ubuntu', roles: %w{web app db}
-set :ssh_options, {
-  forward_agent: true,
-  auth_methods: %w[publickey],
-  keys: %w[home/venus/.ssh/gogo-aws-ec2-ubuntu2004-server2.pem]
-}
+server "ec2-54-169-131-35.ap-southeast-1.compute.amazonaws.com",
+       user: 'ubuntu',
+       roles: %w{web app db},
+      ssh_options: {
+        forward_agent: true,
+        auth_methods: %w(publickey),
+        keys: %w(home/venus/.ssh/gogo-aws-ec2-ubuntu2004-server2.pem)
+      }
